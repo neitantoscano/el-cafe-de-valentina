@@ -147,6 +147,10 @@ header{position:sticky;top:0;z-index:80;background:rgba(21,12,33,.72);
 
 .btn-sm{padding:12px 22px;font-size:.88rem}
 
+/* botón redondo, solo ícono */
+.btn-circ{width:56px;height:56px;padding:0;border-radius:50%;flex:0 0 auto}
+.btn-circ svg{width:25px;height:25px}
+
 /* ============================================================
    HERO — título letra por letra
    ============================================================ */
@@ -342,7 +346,7 @@ footer.sitio{padding:42px 0;border-top:1px solid var(--hilo);color:var(--tenue);
 }
 @media (max-width:520px){
   .galeria{column-count:1;max-width:400px;margin-inline:auto}
-  .hero-cta .btn,.banda-cta .btn{width:100%}
+  .hero-cta .btn:not(.btn-circ),.banda-cta .btn{width:100%}
   .nav-links{gap:18px;font-size:.85rem}
   .titulo{font-size:clamp(2.6rem,15vw,4rem)}
   .franja div{padding:18px 12px}
@@ -400,6 +404,9 @@ footer.sitio{padding:42px 0;border-top:1px solid var(--hilo);color:var(--tenue);
     <div class="hero-cta">
       <a class="btn btn-glow" href="menu.html">Ver el menú</a>
       <a class="btn btn-borde" href="index.html#ubicacion">Cómo llegar</a>
+      <a class="btn btn-fb btn-circ" href="https://www.facebook.com/valentinacafecuautla/" target="_blank" rel="noopener" aria-label="Página de Facebook" title="Página de Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+      </a>
     </div>
   </div>
 
