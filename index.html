@@ -3,111 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Menú — Valentina Café, Cuautla</title>
-<meta name="description" content="Crepas dulces y saladas, waffles, café, frappés y hamburguesas. Valentina Café, Plazuela Miguel Hidalgo, Cuautla.">
+<title>Valentina Café — Crepas, waffles y café en Cuautla, Morelos</title>
+<meta name="description" content="Cafetería en la Plazuela Miguel Hidalgo, Cuautla. Crepas, waffles, frappés y hamburguesas. Abierto todos los días de 9am a 10pm. Pet friendly.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- ============================================================
-     ⚠️  LOS PRECIOS DE ESTA PÁGINA SON DE EJEMPLO.
-     Hay que reemplazarlos con los reales antes de publicar.
-     Busca el signo $ para encontrarlos todos.
-     ============================================================ -->
-
 <style>
-/* ============ TOKENS (mismo sistema que index.html) ============ */
+/* ============================================================
+   TOKENS — noche morada con glows pastel (rosa · lila · cielo)
+   ============================================================ */
 :root{
-  --noche:#150C21; --noche-2:#1E1330; --noche-3:#2A1C40;
-  --rosa:#FF8FC7; --lila:#B98CFF; --cielo:#7CD4FF;
-  --crema:#FFF4FA; --tenue:#B9A8CC; --hilo:rgba(255,244,250,.12);
+  --noche:#150C21;
+  --noche-2:#1E1330;
+  --noche-3:#2A1C40;
+
+  --rosa:#FF8FC7;
+  --lila:#B98CFF;
+  --cielo:#7CD4FF;
+
+  --crema:#FFF4FA;
+  --tenue:#B9A8CC;
+  --hilo:rgba(255,244,250,.12);
+
   --wa:#25D366;
+
   --f-display:"Sora", system-ui, sans-serif;
   --f-body:"Manrope", system-ui, sans-serif;
-  --wrap:1180px; --pad:clamp(20px,5vw,52px); --r:22px;
+
+  --wrap:1180px;
+  --pad:clamp(20px,5vw,52px);
+  --r:22px;
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;background:var(--noche);scroll-padding-top:150px}
-body{background:transparent;color:var(--crema);font-family:var(--f-body);
-  font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;background:var(--noche)}
+body{
+  background:transparent;color:var(--crema);
+  font-family:var(--f-body);font-weight:300;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 ::selection{background:var(--rosa);color:var(--noche)}
 :focus-visible{outline:2px solid var(--cielo);outline-offset:3px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
-.etiqueta{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;
-  background:linear-gradient(90deg,var(--rosa),var(--cielo));
-  -webkit-background-clip:text;background-clip:text;color:transparent}
-.brillo{background:linear-gradient(100deg,var(--rosa),var(--lila),var(--cielo),var(--rosa));
-  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:corre-grad 8s linear infinite}
-@keyframes corre-grad{to{background-position:300% 0}}
 
-/* ---------- fondo ---------- */
+/* ============================================================
+   FONDO — orbes pastel flotando + grano
+   ============================================================ */
 .orbes{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
 .orbes span{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform}
-.o1{width:50vw;height:50vw;min-width:340px;min-height:340px;top:-14vh;left:-10vw;
-    background:var(--rosa);opacity:.30;animation:flota-a 30s ease-in-out infinite}
-.o2{width:42vw;height:42vw;min-width:300px;min-height:300px;top:30%;right:-12vw;
-    background:var(--lila);opacity:.30;animation:flota-b 38s ease-in-out infinite}
-.o3{width:38vw;height:38vw;min-width:270px;min-height:270px;bottom:2%;left:5vw;
-    background:var(--cielo);opacity:.22;animation:flota-c 46s ease-in-out infinite}
+.o1{width:50vw;height:50vw;min-width:340px;min-height:340px;top:-12vh;left:-10vw;
+    background:var(--rosa);opacity:.34;animation:flota-a 30s ease-in-out infinite}
+.o2{width:42vw;height:42vw;min-width:300px;min-height:300px;top:26%;right:-12vw;
+    background:var(--lila);opacity:.32;animation:flota-b 38s ease-in-out infinite}
+.o3{width:38vw;height:38vw;min-width:270px;min-height:270px;bottom:4%;left:6vw;
+    background:var(--cielo);opacity:.24;animation:flota-c 46s ease-in-out infinite}
+.o4{width:28vw;height:28vw;min-width:210px;min-height:210px;top:60%;right:24%;
+    background:var(--rosa);opacity:.18;animation:flota-b 34s ease-in-out infinite reverse}
 @keyframes flota-a{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(7vw,8vh,0) scale(1.2)}}
 @keyframes flota-b{0%,100%{transform:translate3d(0,0,0) scale(1.08)}50%{transform:translate3d(-8vw,-6vh,0) scale(.88)}}
 @keyframes flota-c{0%,100%{transform:translate3d(0,0,0)}33%{transform:translate3d(6vw,-7vh,0)}66%{transform:translate3d(-5vw,5vh,0)}}
+
 .grano{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.13;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
 
-/* ---------- header ---------- */
+/* ============================================================
+   TIPOGRAFÍA
+   ============================================================ */
+.etiqueta{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;
+  background:linear-gradient(90deg,var(--rosa),var(--cielo));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.h2{font-family:var(--f-display);font-weight:800;font-size:clamp(2rem,5.4vw,3.5rem);
+  line-height:1.05;letter-spacing:-.03em;margin:.5rem 0 1rem}
+.bajada{color:var(--tenue);max-width:54ch;font-size:1.05rem}
+
+.brillo{
+  background:linear-gradient(100deg,var(--rosa),var(--lila),var(--cielo),var(--rosa));
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:corre-grad 8s linear infinite;
+}
+@keyframes corre-grad{to{background-position:300% 0}}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
 header{position:sticky;top:0;z-index:80;background:rgba(21,12,33,.72);
   backdrop-filter:blur(18px);border-bottom:1px solid var(--hilo)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
 .marca{font-family:var(--f-display);font-weight:800;font-size:1.15rem;letter-spacing:-.02em;
   display:flex;align-items:center;gap:10px}
 .punto{width:10px;height:10px;border-radius:50%;
-  background:linear-gradient(135deg,var(--rosa),var(--cielo));box-shadow:0 0 16px var(--rosa)}
+  background:linear-gradient(135deg,var(--rosa),var(--cielo));
+  box-shadow:0 0 16px var(--rosa);animation:late 2.8s ease-in-out infinite}
+@keyframes late{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:.6}}
 .nav-links{display:flex;gap:30px;font-size:.95rem;color:var(--tenue)}
 .nav-links a{position:relative;padding:5px 0;transition:color .25s}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;border-radius:3px;
-  background:linear-gradient(90deg,var(--rosa),var(--cielo));box-shadow:0 0 12px var(--rosa);transition:width .32s}
+  background:linear-gradient(90deg,var(--rosa),var(--cielo));
+  box-shadow:0 0 12px var(--rosa);transition:width .32s ease}
 .nav-links a:hover{color:var(--crema)}
 .nav-links a:hover::after{width:100%}
 .nav-links a.aqui{color:var(--crema);font-weight:500}
 .nav-links a.aqui::after{width:100%}
 
-/* ---------- botones ---------- */
+/* ============================================================
+   BOTONES — glow + barrido de luz
+   ============================================================ */
 .btn{position:relative;overflow:hidden;isolation:isolate;
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
   padding:16px 32px;border-radius:100px;border:1.5px solid transparent;
   font-family:var(--f-body);font-size:.98rem;font-weight:600;cursor:pointer;
-  transition:transform .3s cubic-bezier(.2,.8,.3,1),box-shadow .35s,color .3s,border-color .3s}
+  transition:transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .35s, color .3s, border-color .3s}
 .btn::after{content:"";position:absolute;top:0;left:-140%;width:60%;height:100%;z-index:-1;
   background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
   transform:skewX(-22deg);transition:left .7s cubic-bezier(.5,0,.3,1)}
 .btn:hover::after{left:160%}
 .btn:active{transform:translateY(1px) scale(.99)}
+
 .btn-glow{background:linear-gradient(100deg,var(--rosa),var(--lila));color:#2A0F22;
-  box-shadow:0 0 28px -6px var(--rosa), 0 14px 34px -14px var(--lila)}
-.btn-glow:hover{transform:translateY(-3px);box-shadow:0 0 46px -4px var(--rosa)}
+  box-shadow:0 0 28px -6px var(--rosa), 0 14px 34px -14px var(--lila);
+  animation:pulso 3.6s ease-in-out infinite}
+@keyframes pulso{
+  0%,100%{box-shadow:0 0 26px -8px var(--rosa), 0 14px 34px -16px var(--lila)}
+  50%{box-shadow:0 0 46px -4px var(--rosa), 0 16px 40px -12px var(--lila)}
+}
+.btn-glow:hover{transform:translateY(-3px)}
+
 .btn-borde{border-color:var(--hilo);color:var(--crema);background:rgba(255,244,250,.04)}
 .btn-borde:hover{border-color:var(--cielo);color:var(--cielo);transform:translateY(-3px);
   box-shadow:0 0 30px -10px var(--cielo)}
-.btn-wa{background:var(--wa);color:#052e16;box-shadow:0 0 26px -8px var(--wa)}
+
+.btn-wa{background:var(--wa);color:#052e16;box-shadow:0 0 26px -8px var(--wa), 0 12px 30px -14px var(--wa)}
 .btn-wa:hover{transform:translateY(-3px);box-shadow:0 0 44px -6px var(--wa)}
 .btn-wa svg{width:20px;height:20px}
 .btn-sm{padding:12px 22px;font-size:.88rem}
 
-/* ---------- cabecera de página ---------- */
-.head{padding:clamp(44px,8vh,86px) 0 clamp(24px,3.5vh,40px);text-align:center}
-.head p{color:var(--tenue);max-width:52ch;margin-inline:auto;
-  opacity:0;animation:entra .9s ease forwards;animation-delay:.95s}
-.head p.etiqueta{opacity:1;animation:none}
-
-/* título que cae letra por letra */
+/* ============================================================
+   HERO — título letra por letra
+   ============================================================ */
+.hero{padding:clamp(58px,12vh,120px) 0 clamp(44px,7vh,80px);text-align:center}
 .titulo{font-family:var(--f-display);font-weight:800;
-  font-size:clamp(2.6rem,9vw,5.4rem);line-height:.96;letter-spacing:-.045em;
-  margin:16px 0;display:flex;flex-wrap:wrap;justify-content:center;gap:0 .06em}
+  font-size:clamp(3rem,12vw,8rem);line-height:.94;letter-spacing:-.05em;
+  margin:22px 0 0;display:flex;flex-wrap:wrap;justify-content:center;gap:0 .06em}
 .titulo .linea{display:flex}
 .titulo .l{
   display:inline-block;opacity:0;
@@ -117,45 +158,49 @@ header{position:sticky;top:0;z-index:80;background:rgba(21,12,33,.72);
   animation:cae .85s cubic-bezier(.2,.9,.25,1) forwards;
   animation-delay:calc(var(--i) * 70ms);
 }
-.titulo .acento{
-  background:linear-gradient(160deg,var(--cielo) 15%,var(--lila) 60%,var(--rosa) 95%);
-  -webkit-background-clip:text;background-clip:text;
-}
 @keyframes cae{
   0%{opacity:0;transform:translateY(46px) rotate(9deg) scale(.85);filter:blur(9px)}
   60%{opacity:1;filter:blur(0)}
   100%{opacity:1;transform:none;filter:drop-shadow(0 0 22px rgba(255,143,199,.5))}
 }
+.titulo .acento{
+  background:linear-gradient(160deg,var(--cielo) 15%,var(--lila) 60%,var(--rosa) 95%);
+  -webkit-background-clip:text;background-clip:text;
+}
+
+.lema{margin:26px auto 0;font-size:clamp(1.1rem,2.6vw,1.5rem);font-weight:300;
+  max-width:24ch;line-height:1.35;color:var(--crema);
+  opacity:0;animation:entra .9s ease forwards;animation-delay:1.1s}
+.sub{margin:14px auto 0;color:var(--tenue);max-width:48ch;
+  opacity:0;animation:entra .9s ease forwards;animation-delay:1.3s}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:36px;
+  opacity:0;animation:entra .9s ease forwards;animation-delay:1.5s}
 @keyframes entra{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
-/* ============================================================
-   BARRA DE CATEGORÍAS
-   ============================================================ */
-.cats{position:sticky;top:74px;z-index:70;background:rgba(21,12,33,.9);
-  backdrop-filter:blur(18px);border-bottom:1px solid var(--hilo)}
-.cats-inner{display:flex;gap:9px;overflow-x:auto;padding:14px 0;scrollbar-width:none}
-.cats-inner::-webkit-scrollbar{display:none}
-.cat{flex:0 0 auto;padding:10px 22px;border-radius:100px;border:1.5px solid var(--hilo);
-  font-size:.92rem;white-space:nowrap;color:var(--tenue);
-  transition:all .3s cubic-bezier(.2,.8,.3,1)}
-.cat:hover{color:var(--crema);border-color:var(--lila);transform:translateY(-2px)}
-.cat.on{background:linear-gradient(100deg,var(--rosa),var(--lila));border-color:transparent;
-  color:#2A0F22;font-weight:600;box-shadow:0 0 24px -8px var(--rosa)}
+/* franja de datos */
+.franja{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hilo);
+  border:1px solid var(--hilo);border-radius:var(--r);overflow:hidden;
+  margin-top:clamp(46px,8vh,80px)}
+.franja div{background:rgba(30,19,48,.7);padding:24px 16px;text-align:center}
+.franja b{display:block;font-family:var(--f-display);font-weight:700;font-size:1.5rem;line-height:1.2}
+.franja span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
 
 /* ============================================================
-   MENÚ
+   SECCIONES
    ============================================================ */
-.mseccion{padding:clamp(46px,7vh,82px) 0 0}
-.mseccion:last-of-type{padding-bottom:clamp(50px,8vh,90px)}
+section{padding:clamp(58px,9vh,104px) 0}
+.cabeza{margin-bottom:clamp(30px,5vh,52px)}
+.sube{opacity:0;transform:translateY(26px);
+  transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.sube.ver{opacity:1;transform:none}
 
-.sec-top{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(22px,4vw,52px);
-  align-items:center;margin-bottom:34px}
-.sec-txt h2{font-family:var(--f-display);font-weight:800;
-  font-size:clamp(1.9rem,4.8vw,3rem);line-height:1.02;letter-spacing:-.03em;margin-bottom:10px}
-.sec-txt p{color:var(--tenue);font-size:1rem}
-
-/* marco de imagen con borde giratorio */
+/* ---- MARCOS DE IMAGEN con borde giratorio ----
+   Columnas tipo mosaico: cada foto conserva su forma original
+   y las alturas desiguales se acomodan solas. */
+.galeria{column-count:3;column-gap:clamp(16px,2.4vw,26px)}
 .marco{position:relative;padding:2.5px;border-radius:var(--r);overflow:hidden;
+  break-inside:avoid;display:inline-block;width:100%;
+  margin-bottom:clamp(16px,2.4vw,26px);
   transition:transform .4s cubic-bezier(.2,.8,.3,1), box-shadow .45s}
 .marco::before{content:"";position:absolute;top:-60%;left:-60%;width:220%;height:220%;
   background:conic-gradient(from 0deg,var(--rosa),var(--lila),var(--cielo),var(--rosa));
@@ -163,55 +208,92 @@ header{position:sticky;top:0;z-index:80;background:rgba(21,12,33,.72);
 .marco figure{position:relative;z-index:1;border-radius:calc(var(--r) - 3px);overflow:hidden;
   background:var(--noche-2);line-height:0}
 .marco img{width:100%;height:auto;display:block}
-.marco:hover{transform:translateY(-7px);box-shadow:0 0 44px -12px var(--lila)}
+.marco:hover{transform:translateY(-9px);
+  box-shadow:0 0 44px -10px var(--lila), 0 30px 60px -30px var(--rosa)}
 @keyframes gira{to{transform:rotate(360deg)}}
 
-/* platillos */
-.platos{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(28px,4vw,60px)}
-.plato{display:flex;gap:16px;align-items:baseline;padding:19px 0;
-  border-bottom:1px solid var(--hilo);transition:transform .3s cubic-bezier(.2,.8,.3,1)}
-.plato:hover{transform:translateX(7px)}
-.plato:hover .p-nom{background:linear-gradient(90deg,var(--rosa),var(--cielo));
+.marco figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:26px 20px 18px;font-size:.9rem;font-weight:500;
+  background:linear-gradient(transparent,rgba(21,12,33,.9));
+  opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s}
+.marco:hover figcaption{opacity:1;transform:none}
+
+/* ---- TARJETAS DE LO QUE OFRECEN ---- */
+.ofrece{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,24px)}
+.tarj{background:rgba(30,19,48,.66);border:1px solid var(--hilo);border-radius:var(--r);
+  padding:30px 28px;transition:transform .38s cubic-bezier(.2,.8,.3,1),border-color .38s,box-shadow .4s}
+.tarj:hover{transform:translateY(-7px);border-color:transparent;
+  box-shadow:0 0 40px -12px var(--rosa), 0 26px 56px -30px var(--lila)}
+.tarj .ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
+  font-size:1.5rem;margin-bottom:16px}
+.tarj:nth-child(1) .ico{background:linear-gradient(135deg,var(--rosa),var(--lila));box-shadow:0 0 24px -6px var(--rosa)}
+.tarj:nth-child(2) .ico{background:linear-gradient(135deg,var(--lila),var(--cielo));box-shadow:0 0 24px -6px var(--lila)}
+.tarj:nth-child(3) .ico{background:linear-gradient(135deg,var(--cielo),var(--rosa));box-shadow:0 0 24px -6px var(--cielo)}
+.tarj h3{font-family:var(--f-display);font-weight:700;font-size:1.25rem;
+  letter-spacing:-.02em;margin-bottom:8px}
+.tarj p{font-size:.96rem;color:var(--tenue)}
+
+/* ---- RESEÑAS ---- */
+.resenas{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,24px)}
+.res{background:rgba(30,19,48,.66);border:1px solid var(--hilo);border-radius:var(--r);
+  padding:28px 26px;display:flex;flex-direction:column;gap:14px;
+  transition:transform .38s cubic-bezier(.2,.8,.3,1),box-shadow .4s,border-color .38s}
+.res:hover{transform:translateY(-7px);border-color:transparent;
+  box-shadow:0 0 38px -14px var(--cielo), 0 26px 56px -32px var(--lila)}
+.estrellas{letter-spacing:.16em;font-size:.95rem;
+  background:linear-gradient(90deg,var(--rosa),var(--cielo));
   -webkit-background-clip:text;background-clip:text;color:transparent}
-.p-main{flex:1;min-width:0}
-.p-nom{font-family:var(--f-display);font-weight:600;font-size:1.06rem;letter-spacing:-.01em;
-  display:flex;align-items:center;gap:9px;flex-wrap:wrap;transition:color .3s}
-.p-desc{font-size:.92rem;color:var(--tenue);margin-top:2px}
-.puntos{flex:1;border-bottom:2px dotted var(--hilo);min-width:20px;transform:translateY(-4px)}
-.precio{font-family:var(--f-display);font-weight:700;font-size:1.05rem;white-space:nowrap}
+.res p{font-size:1rem;flex:1;line-height:1.6}
+.res footer{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
+.insignia{display:inline-flex;align-items:center;gap:14px;margin-top:32px;
+  border:1px solid var(--hilo);border-radius:100px;padding:13px 26px;
+  background:rgba(30,19,48,.6)}
+.insignia b{font-family:var(--f-display);font-weight:800;font-size:1.6rem;line-height:1}
+.insignia span{font-size:.82rem;color:var(--tenue)}
 
-.chip{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
-  padding:4px 11px;border-radius:100px;color:#2A0F22}
-.chip.top{background:linear-gradient(100deg,var(--rosa),var(--lila));box-shadow:0 0 16px -5px var(--rosa)}
-.chip.new{background:linear-gradient(100deg,var(--cielo),var(--lila));box-shadow:0 0 16px -5px var(--cielo)}
+/* ---- UBICACIÓN ---- */
+.ubi{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,3vw,34px);align-items:stretch}
+.mapa-marco{position:relative;padding:2.5px;border-radius:var(--r);overflow:hidden}
+.mapa-marco::before{content:"";position:absolute;top:-60%;left:-60%;width:220%;height:220%;
+  background:conic-gradient(from 0deg,var(--rosa),var(--lila),var(--cielo),var(--rosa));
+  animation:gira 8s linear infinite;z-index:0}
+.mapa{position:relative;z-index:1;border-radius:calc(var(--r) - 3px);overflow:hidden;
+  background:var(--noche-2);min-height:430px;height:100%}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
-/* caja de opciones */
-.opciones{background:rgba(30,19,48,.66);border:1px solid var(--hilo);border-radius:var(--r);
-  padding:26px 28px;margin-top:28px}
-.opciones h3{font-family:var(--f-display);font-weight:700;font-size:1.1rem;margin-bottom:12px}
-.op-lista{display:flex;flex-wrap:wrap;gap:9px}
-.op-lista span{padding:8px 16px;border-radius:100px;background:var(--noche-3);
-  font-size:.9rem;transition:all .28s}
-.op-lista span:hover{background:linear-gradient(100deg,var(--rosa),var(--lila));
-  color:#2A0F22;font-weight:600;box-shadow:0 0 20px -6px var(--rosa)}
+.datos{background:rgba(30,19,48,.7);border:1px solid var(--hilo);border-radius:var(--r);
+  padding:clamp(26px,3.2vw,38px);display:flex;flex-direction:column;justify-content:center}
+.datos h3{font-family:var(--f-display);font-weight:800;font-size:1.5rem;
+  letter-spacing:-.025em;margin:10px 0 8px}
+.dir{color:var(--tenue);line-height:1.9;margin-bottom:24px}
+.horas{width:100%;border-collapse:collapse;margin-bottom:24px}
+.horas td{padding:10px 0;border-bottom:1px solid var(--hilo);font-size:.95rem}
+.horas td:last-child{text-align:right;color:var(--tenue)}
+.abierto{display:inline-flex;align-items:center;gap:9px;margin-bottom:16px;align-self:flex-start;
+  padding:8px 18px;border-radius:100px;background:rgba(37,211,102,.14);
+  border:1px solid rgba(37,211,102,.4);font-size:.86rem;color:#7CFFB0}
+.abierto i{width:8px;height:8px;border-radius:50%;background:var(--wa);
+  box-shadow:0 0 12px var(--wa);animation:late 2.2s ease-in-out infinite}
+.contacto{display:grid;gap:11px}
 
-/* ---------- banda ---------- */
+/* ---- BANDA CTA ---- */
 .banda{text-align:center;border:1px solid var(--hilo);border-radius:var(--r);
-  padding:clamp(40px,6.5vw,74px) clamp(24px,5vw,60px);
+  padding:clamp(42px,7vw,78px) clamp(24px,5vw,60px);
   background:radial-gradient(ellipse at 50% 120%, rgba(185,140,255,.24), rgba(30,19,48,.5) 62%);
   margin-bottom:clamp(50px,8vh,90px)}
-.banda h2{font-family:var(--f-display);font-weight:800;font-size:clamp(2rem,5vw,3.2rem);
-  line-height:1.04;letter-spacing:-.03em;margin:.5rem auto 1rem;max-width:17ch}
-.banda p{color:var(--tenue);max-width:48ch;margin-inline:auto}
-.banda-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:30px}
+.banda .h2{margin-inline:auto;max-width:17ch}
+.banda .bajada{margin-inline:auto}
+.banda-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:32px}
 
+/* ---- FOOTER ---- */
 footer.sitio{padding:42px 0;border-top:1px solid var(--hilo);color:var(--tenue);font-size:.9rem}
 .pie{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
 .pie a:hover{color:var(--rosa)}
 
+/* ---- WHATSAPP FLOTANTE ---- */
 .wa-flota{position:fixed;right:clamp(16px,3vw,28px);bottom:clamp(16px,3vw,28px);z-index:95;
   width:60px;height:60px;border-radius:50%;background:var(--wa);color:#052e16;
-  display:grid;place-items:center;box-shadow:0 0 30px -6px var(--wa);
+  display:grid;place-items:center;box-shadow:0 0 30px -6px var(--wa), 0 12px 32px -12px rgba(0,0,0,.6);
   transition:transform .3s cubic-bezier(.2,.8,.3,1)}
 .wa-flota:hover{transform:scale(1.1) rotate(-8deg)}
 .wa-flota svg{width:30px;height:30px}
@@ -219,352 +301,260 @@ footer.sitio{padding:42px 0;border-top:1px solid var(--hilo);color:var(--tenue);
   border:2px solid var(--wa);animation:anillo 2.4s ease-out infinite}
 @keyframes anillo{0%{transform:scale(1);opacity:.75}100%{transform:scale(1.8);opacity:0}}
 
-/* ============ RESPONSIVE ============ */
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 @media (max-width:900px){
   .nav-links{display:none}
-  .platos{grid-template-columns:1fr}
-  .sec-top{grid-template-columns:1fr}
-  html{scroll-padding-top:140px}
+  .galeria{column-count:2}
+  .ofrece,.resenas{grid-template-columns:1fr}
+  .franja{grid-template-columns:repeat(2,1fr)}
+  .ubi{grid-template-columns:1fr}
+  .mapa{min-height:320px}
 }
 @media (max-width:520px){
-  .banda-cta .btn{width:100%}
+  .galeria{column-count:1;max-width:400px;margin-inline:auto}
+  .hero-cta .btn,.banda-cta .btn{width:100%}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto}
+  .sube{opacity:1;transform:none}
+  .titulo .l,.lema,.sub,.hero-cta{opacity:1}
 }
 </style>
 </head>
 <body>
 
-<div class="orbes" aria-hidden="true"><span class="o1"></span><span class="o2"></span><span class="o3"></span></div>
+<div class="orbes" aria-hidden="true">
+  <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+</div>
 <div class="grano" aria-hidden="true"></div>
 
+<!-- ================= HEADER ================= -->
 <header>
   <div class="wrap nav">
     <a class="marca" href="index.html"><span class="punto"></span>Valentina Café</a>
     <nav class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="menu.html" class="aqui">Menú</a>
+      <a href="index.html" class="aqui">Inicio</a>
+      <a href="menu.html">Menú</a>
       <a href="index.html#ubicacion">Ubicación</a>
     </nav>
     <a class="btn btn-wa btn-sm" href="https://wa.me/527353592505?text=Hola%2C%20quiero%20hacer%20un%20pedido%20a%20domicilio." target="_blank" rel="noopener">Pedir por WhatsApp</a>
   </div>
 </header>
 
-<div class="wrap head">
-  <p class="etiqueta">De 9am a 10pm, todos los días</p>
-  <h1 class="titulo" aria-label="Nuestro menú">
-    <span class="linea" aria-hidden="true">
-      <span class="l" style="--i:0">N</span><span class="l" style="--i:1">u</span><span class="l" style="--i:2">e</span><span class="l" style="--i:3">s</span><span class="l" style="--i:4">t</span><span class="l" style="--i:5">r</span><span class="l" style="--i:6">o</span>
-    </span>
-    <span class="linea" aria-hidden="true">
-      <span class="l acento" style="--i:8">m</span><span class="l acento" style="--i:9">e</span><span class="l acento" style="--i:10">n</span><span class="l acento" style="--i:11">ú</span>
-    </span>
-  </h1>
-  <p>Todo se prepara al momento. Si quieres pedir a domicilio, mándanos tu orden por WhatsApp y te decimos el tiempo.</p>
-</div>
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <p class="etiqueta">Plazuela Miguel Hidalgo · Cuautla, Morelos</p>
 
-<!-- ================= BARRA DE CATEGORÍAS ================= -->
-<div class="cats">
-  <div class="wrap cats-inner">
-    <a class="cat" href="#crepas">Crepas dulces</a>
-    <a class="cat" href="#saladas">Crepas saladas</a>
-    <a class="cat" href="#waffles">Waffles</a>
-    <a class="cat" href="#cafe">Café</a>
-    <a class="cat" href="#frappes">Frappés</a>
-    <a class="cat" href="#salado">Para comer</a>
+    <!-- El título se anima letra por letra. Cada <span> lleva su propio retraso. -->
+    <h1 class="titulo" aria-label="Valentina Café">
+      <span class="linea" aria-hidden="true">
+        <span class="l" style="--i:0">V</span><span class="l" style="--i:1">a</span><span class="l" style="--i:2">l</span><span class="l" style="--i:3">e</span><span class="l" style="--i:4">n</span><span class="l" style="--i:5">t</span><span class="l" style="--i:6">i</span><span class="l" style="--i:7">n</span><span class="l" style="--i:8">a</span>
+      </span>
+      <span class="linea" aria-hidden="true">
+        <span class="l acento" style="--i:10">C</span><span class="l acento" style="--i:11">a</span><span class="l acento" style="--i:12">f</span><span class="l acento" style="--i:13">é</span>
+      </span>
+    </h1>
+
+    <p class="lema">Crepas, waffles y café que saben a tarde larga.</p>
+    <p class="sub">En pleno centro de Cuautla, abierto todos los días de 9 de la mañana a 10 de la noche. Tu perro también es bienvenido.</p>
+
+    <div class="hero-cta">
+      <a class="btn btn-glow" href="menu.html">Ver el menú</a>
+      <a class="btn btn-borde" href="index.html#ubicacion">Cómo llegar</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="franja">
+      <div><b class="brillo">4.5</b><span>★★★★★ en Google</span></div>
+      <div><b class="brillo">1,399</b><span>Reseñas</span></div>
+      <div><b class="brillo">7 días</b><span>9am — 10pm</span></div>
+      <div><b class="brillo">Pet</b><span>Friendly</span></div>
+    </div>
   </div>
 </div>
 
-<!-- ================= CREPAS DULCES ================= -->
-<section class="mseccion" id="crepas">
+<!-- ================= LO QUE OFRECEMOS ================= -->
+<section id="nosotros">
   <div class="wrap">
-    <div class="sec-top">
-      <div class="sec-txt">
-        <h2>Crepas <span class="brillo">dulces</span></h2>
-        <p>Elige de 1 a 3 ingredientes. Puedes cambiar la crepa por waffle por $15 más.</p>
-      </div>
-      <!-- ▸ Cambia la imagen moviendo el src de otro bloque -->
-      <div class="marco"><figure><img src="https://i.ibb.co/KxXs03zM/unnamed-2.jpg" alt="Crepas dulces" loading="lazy"></figure></div>
+    <div class="cabeza sube">
+      <p class="etiqueta">Lo nuestro</p>
+      <h2 class="h2">Para quedarse <span class="brillo">un rato</span></h2>
+      <p class="bajada">No somos de pasar rápido. Somos de sentarse, pedir otro café y que se haga de noche sin darte cuenta.</p>
     </div>
 
-    <div class="platos">
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Crepa 1 ingrediente</div>
-          <div class="p-desc">Elige uno de la lista de abajo.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$80</span>
-      </div>
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Crepa 2 ingredientes <span class="chip top">La más pedida</span></div>
-          <div class="p-desc">La combinación clásica: queso crema y nutella.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$88</span>
-      </div>
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Crepa 3 ingredientes</div>
-          <div class="p-desc">Para los que no se deciden.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$94</span>
-      </div>
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Crepa de la casa</div>
-          <div class="p-desc">Nutella, fresa, plátano y helado de vainilla.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$115</span>
-      </div>
-    </div>
+    <div class="ofrece">
+      <article class="tarj sube">
+        <div class="ico">🥞</div>
+        <h3>Crepas y waffles</h3>
+        <p>Dulces con nutella, cajeta, lechera o frutos rojos. Saladas con jamón, queso y champiñones. Y siempre puedes cambiar la crepa por waffle.</p>
+      </article>
 
-    <div class="opciones">
-      <h3>Elige tus ingredientes</h3>
-      <div class="op-lista">
-        <span>Nutella</span><span>Cajeta</span><span>Lechera</span><span>Crema de maní</span>
-        <span>Mermelada de fresa</span><span>Zarzamora</span><span>Frutos rojos</span>
-        <span>Queso crema</span><span>Chocolate</span>
-      </div>
-      <h3 style="margin-top:22px">Fruta fresca &nbsp;<span style="font-family:var(--f-display);font-size:.95rem" class="brillo">+$17</span></h3>
-      <div class="op-lista">
-        <span>Durazno</span><span>Plátano</span><span>Fresa</span><span>Manzana</span>
-        <span>Zarzamora</span><span>Frambuesa</span><span>Kiwi</span>
-      </div>
+      <article class="tarj sube">
+        <div class="ico">☕</div>
+        <h3>Café y frappés</h3>
+        <p>Del americano de la mañana al frappé de mazapán de la tarde. Todo preparado al momento, nada de mezclas de bote.</p>
+      </article>
+
+      <article class="tarj sube">
+        <div class="ico">🐾</div>
+        <h3>Pet friendly</h3>
+        <p>Tu perro entra contigo, se sienta contigo y nadie te va a decir nada. Traemos agua para él sin que la pidas.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ================= CREPAS SALADAS ================= -->
-<section class="mseccion" id="saladas">
+<!-- ================= GALERÍA ================= -->
+<section id="galeria">
   <div class="wrap">
-    <div class="sec-top">
-      <div class="sec-txt">
-        <h2>Crepas <span class="brillo">saladas</span></h2>
-        <p>Mismo tamaño, mismo precio por ingredientes. También en versión waffle.</p>
-      </div>
-      <div class="marco"><figure><img src="https://i.ibb.co/BVYQsjqv/unnamed.png" alt="Crepas saladas" loading="lazy"></figure></div>
+    <div class="cabeza sube">
+      <p class="etiqueta">El lugar</p>
+      <h2 class="h2">Algunos de <span class="brillo">nuestros productos</span></h2>
     </div>
 
-    <div class="platos">
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Jamón y queso</div>
-          <div class="p-desc">La de siempre, la que nunca falla.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$95</span>
+    <!-- ▸ NOTA: el orden de las fotos se cambia moviendo los bloques <div class="marco">.
+         Los pies de foto (figcaption) también son editables. -->
+    <div class="galeria">
+
+      <div class="marco sube">
+        <figure>
+          <img src="https://i.ibb.co/KxXs03zM/unnamed-2.jpg" alt="Valentina Café" loading="lazy">
+          <figcaption>Valentina Café</figcaption>
+        </figure>
       </div>
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Champiñones y queso</div>
-          <div class="p-desc">Salteados con mantequilla y ajo.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$99</span>
+
+      <div class="marco sube">
+        <figure>
+          <img src="https://i.ibb.co/BVYQsjqv/unnamed.png" alt="Valentina Café" loading="lazy">
+          <figcaption>Nuestro espacio</figcaption>
+        </figure>
       </div>
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Philadelphia y jamón</div>
-          <div class="p-desc">Cremosa, con un toque de pimienta.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$105</span>
+
+      <div class="marco sube">
+        <figure>
+          <img src="https://i.ibb.co/6RJMXFsB/unnamed-1.png" alt="Valentina Café" loading="lazy">
+          <figcaption>Hecho al momento</figcaption>
+        </figure>
       </div>
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Crepa completa</div>
-          <div class="p-desc">Jamón, queso, champiñones y philadelphia.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$125</span>
+
+      <div class="marco sube">
+        <figure>
+          <img src="https://i.ibb.co/Kp6VBx38/unnamed-1.jpg" alt="Valentina Café" loading="lazy">
+          <figcaption>Para compartir</figcaption>
+        </figure>
       </div>
+
+      <div class="marco sube">
+        <figure>
+          <img src="https://i.ibb.co/N2Hb1Vky/unnamed.jpg" alt="Valentina Café" loading="lazy">
+          <figcaption>De la casa</figcaption>
+        </figure>
+      </div>
+
+      <div class="marco sube">
+        <figure>
+          <img src="https://i.ibb.co/KpPWkchk/unnamed-2.png" alt="Valentina Café" loading="lazy">
+          <figcaption>Te esperamos</figcaption>
+        </figure>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ================= WAFFLES ================= -->
-<section class="mseccion" id="waffles">
+<!-- ================= RESEÑAS ================= -->
+<section id="resenas">
   <div class="wrap">
-    <div class="sec-top">
-      <div class="sec-txt">
-        <h2><span class="brillo">Waffles</span></h2>
-        <p>Recién hechos, crujientes por fuera. Los favoritos de la tarde.</p>
-      </div>
-      <div class="marco"><figure><img src="https://i.ibb.co/6RJMXFsB/unnamed-1.png" alt="Waffles" loading="lazy"></figure></div>
+    <div class="cabeza sube">
+      <p class="etiqueta">Lo que dicen</p>
+      <h2 class="h2">Directo de <span class="brillo">Google</span></h2>
     </div>
 
-    <div class="platos">
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Waffle de frutos rojos</div>
-          <div class="p-desc">Fresa, zarzamora, frambuesa y crema batida.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$149</span>
-      </div>
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Waffle nutella y nuez <span class="chip top">La más pedida</span></div>
-          <div class="p-desc">Con helado de vainilla encima.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$159</span>
-      </div>
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Waffle de tocino y papas</div>
-          <div class="p-desc">La versión salada. Sí, funciona.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$169</span>
-      </div>
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Bola de helado extra</div>
-          <div class="p-desc">Vainilla, chocolate o fresa.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$35</span>
-      </div>
+    <div class="resenas">
+      <article class="res sube">
+        <div class="estrellas" aria-label="5 de 5">★★★★★</div>
+        <p>«¡Me encantó este lugar! Pedí la crepa de queso crema con nutella y un frappé de mazapán. Súper recomendado.»</p>
+        <footer>Reseña de Google</footer>
+      </article>
+
+      <article class="res sube">
+        <div class="estrellas" aria-label="5 de 5">★★★★★</div>
+        <p>«Un buen lugar para disfrutar una buena taza de café.»</p>
+        <footer>Reseña de Google</footer>
+      </article>
+
+      <article class="res sube">
+        <div class="estrellas" aria-label="5 de 5">★★★★★</div>
+        <p>«Súper padre. El ambiente y la atención hacen que quieras quedarte más tiempo del que planeabas.»</p>
+        <footer>Reseña de Google</footer>
+      </article>
+    </div>
+
+    <div class="insignia sube">
+      <b class="brillo">4.5</b>
+      <span>★★★★★ &nbsp;·&nbsp; 1,399 reseñas en Google</span>
     </div>
   </div>
 </section>
 
-<!-- ================= CAFÉ ================= -->
-<section class="mseccion" id="cafe">
+<!-- ================= UBICACIÓN ================= -->
+<section id="ubicacion">
   <div class="wrap">
-    <div class="sec-top">
-      <div class="sec-txt">
-        <h2><span class="brillo">Café</span></h2>
-        <p>Caliente, para quedarse. Todos se pueden pedir para llevar.</p>
-      </div>
-      <div class="marco"><figure><img src="https://i.ibb.co/Kp6VBx38/unnamed-1.jpg" alt="Café" loading="lazy"></figure></div>
+    <div class="cabeza sube">
+      <p class="etiqueta">Dónde estamos</p>
+      <h2 class="h2">En pleno <span class="brillo">centro</span></h2>
+      <p class="bajada">Sobre la Plazuela Miguel Hidalgo, a unos pasos del centro de Cuautla.</p>
     </div>
 
-    <div class="platos">
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Americano</div><div class="p-desc">Sencillo y bien cargado.</div></div>
-        <span class="puntos"></span><span class="precio">$45</span>
+    <div class="ubi sube">
+      <div class="mapa-marco">
+        <div class="mapa">
+          <iframe
+            title="Mapa a Valentina Café"
+            src="https://maps.google.com/maps?q=Plazuela%20Miguel%20Hidalgo%2051A%2C%20Cuautla%2C%20Morelos%2062747&z=17&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Capuchino</div><div class="p-desc">Con espuma de leche y canela.</div></div>
-        <span class="puntos"></span><span class="precio">$58</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Latte</div><div class="p-desc">Suave, con arte en la espuma.</div></div>
-        <span class="puntos"></span><span class="precio">$62</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Moka</div><div class="p-desc">Café con chocolate y crema batida.</div></div>
-        <span class="puntos"></span><span class="precio">$68</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Chocolate caliente</div><div class="p-desc">Con malvaviscos, si quieres.</div></div>
-        <span class="puntos"></span><span class="precio">$60</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Té de la casa</div><div class="p-desc">Manzanilla, verde o frutos rojos.</div></div>
-        <span class="puntos"></span><span class="precio">$42</span>
-      </div>
+
+      <aside class="datos">
+        <div class="abierto"><i></i> Abierto todos los días</div>
+
+        <p class="etiqueta">Dirección</p>
+        <h3>Plazuela Miguel Hidalgo #51A</h3>
+        <p class="dir">Col. Miguel Hidalgo<br>62747 Cuautla, Morelos</p>
+
+        <p class="etiqueta">Horario</p>
+        <table class="horas">
+          <tr><td>Lunes a viernes</td><td>9:00 — 22:00</td></tr>
+          <tr><td>Sábado</td><td>9:00 — 22:00</td></tr>
+          <tr><td>Domingo</td><td>9:00 — 22:00</td></tr>
+        </table>
+
+        <div class="contacto">
+          <a class="btn btn-glow" href="https://maps.app.goo.gl/DwYVMApTUpnZPaq8A" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- ================= FRAPPÉS ================= -->
-<section class="mseccion" id="frappes">
+<!-- ================= BANDA CTA ================= -->
+<section>
   <div class="wrap">
-    <div class="sec-top">
-      <div class="sec-txt">
-        <h2><span class="brillo">Frappés</span> y malteadas</h2>
-        <p>El antojo de la tarde. Todos llevan crema batida encima.</p>
-      </div>
-      <div class="marco"><figure><img src="https://i.ibb.co/N2Hb1Vky/unnamed.jpg" alt="Frappés" loading="lazy"></figure></div>
-    </div>
-
-    <div class="platos">
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Frappé de mazapán <span class="chip top">La más pedida</span></div>
-          <div class="p-desc">El que todos piden y luego recomiendan.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$85</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Frappé de moka</div><div class="p-desc">Café, chocolate y hielo.</div></div>
-        <span class="puntos"></span><span class="precio">$82</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Frappé de oreo</div><div class="p-desc">Con galleta molida encima.</div></div>
-        <span class="puntos"></span><span class="precio">$88</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Malteada de fresa</div><div class="p-desc">Con helado de verdad, no jarabe.</div></div>
-        <span class="puntos"></span><span class="precio">$90</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Limonada de la casa</div><div class="p-desc">Natural o mineral.</div></div>
-        <span class="puntos"></span><span class="precio">$55</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Refresco</div><div class="p-desc">De botella de vidrio.</div></div>
-        <span class="puntos"></span><span class="precio">$35</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PARA COMER ================= -->
-<section class="mseccion" id="salado">
-  <div class="wrap">
-    <div class="sec-top">
-      <div class="sec-txt">
-        <h2>Para <span class="brillo">comer</span></h2>
-        <p>Si vienes con hambre de verdad. Todo con papas a la francesa.</p>
-      </div>
-      <div class="marco"><figure><img src="https://i.ibb.co/KpPWkchk/unnamed-2.png" alt="Hamburguesas" loading="lazy"></figure></div>
-    </div>
-
-    <div class="platos">
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Hamburguesa clásica</div>
-          <div class="p-desc">Carne de res, queso amarillo, lechuga y jitomate.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$135</span>
-      </div>
-      <div class="plato">
-        <div class="p-main">
-          <div class="p-nom">Hamburguesa Valentina <span class="chip new">De la casa</span></div>
-          <div class="p-desc">Doble carne, tocino, queso manchego y cebolla caramelizada.</div>
-        </div>
-        <span class="puntos"></span><span class="precio">$179</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Boneless</div><div class="p-desc">BBQ, búfalo o mango habanero.</div></div>
-        <span class="puntos"></span><span class="precio">$145</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Papas gajo con queso</div><div class="p-desc">Para compartir. O no.</div></div>
-        <span class="puntos"></span><span class="precio">$95</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Baguette de jamón serrano</div><div class="p-desc">Con pesto, queso de cabra y arúgula.</div></div>
-        <span class="puntos"></span><span class="precio">$139</span>
-      </div>
-      <div class="plato">
-        <div class="p-main"><div class="p-nom">Ensalada César</div><div class="p-desc">Con pollo a la parrilla.</div></div>
-        <span class="puntos"></span><span class="precio">$125</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= BANDA ================= -->
-<section style="padding-top:clamp(50px,8vh,90px)">
-  <div class="wrap">
-    <div class="banda">
-      <p class="etiqueta">¿Ya se te antojó?</p>
-      <h2>Pídelo <span class="brillo">ahora</span></h2>
-      <p>Mándanos tu orden por WhatsApp y te confirmamos el tiempo de entrega.</p>
+    <div class="banda sube">
+      <p class="etiqueta">¿Antojo desde casa?</p>
+      <h2 class="h2">Te lo <span class="brillo">llevamos</span></h2>
+      <p class="bajada">Mándanos tu pedido por WhatsApp y lo preparamos. También puedes pasar por él.</p>
       <div class="banda-cta">
         <a class="btn btn-wa" href="https://wa.me/527353592505?text=Hola%2C%20quiero%20hacer%20un%20pedido%20a%20domicilio." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
           Pedir por WhatsApp
         </a>
-        <a class="btn btn-borde" href="index.html#ubicacion">Cómo llegar</a>
+        <a class="btn btn-borde" href="menu.html">Ver el menú</a>
       </div>
     </div>
   </div>
@@ -589,27 +579,14 @@ footer.sitio{padding:42px 0;border-top:1px solid var(--hilo);color:var(--tenue);
 </a>
 
 <script>
-/* resalta la categoría que estás leyendo */
-const cats = [...document.querySelectorAll(".cat")];
-const secs = cats.map(c => document.querySelector(c.getAttribute("href")));
-const barra = document.querySelector(".cats-inner");
-
-const spy = new IntersectionObserver(entradas => {
-  entradas.forEach(e => {
-    if(e.isIntersecting){
-      const i = secs.indexOf(e.target);
-      const chip = cats[i];
-      if(!chip) return;
-      cats.forEach(c => c.classList.remove("on"));
-      chip.classList.add("on");
-      /* mueve SOLO la barra en horizontal, nunca la página */
-      const destino = chip.offsetLeft - (barra.clientWidth - chip.offsetWidth) / 2;
-      barra.scrollTo({left: Math.max(0, destino), behavior: "smooth"});
-    }
-  });
-}, {rootMargin:"-150px 0px -55% 0px"});
-
-secs.forEach(s => s && spy.observe(s));
+/* aparecer al hacer scroll */
+const io = new IntersectionObserver(entradas => {
+  entradas.forEach(e => { if(e.isIntersecting){ e.target.classList.add("ver"); io.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+document.querySelectorAll(".sube").forEach((el,i) => {
+  el.style.transitionDelay = `${(i % 3) * 90}ms`;
+  io.observe(el);
+});
 </script>
 
 </body>
