@@ -309,13 +309,13 @@ section{padding:clamp(58px,9vh,104px) 0}
 .cafe-svg{width:min(100%,460px);height:auto;overflow:visible;
   filter:drop-shadow(0 24px 60px rgba(185,140,255,.32))}
 
-/* la tetera se inclina y regresa */
-.tetera{transform-box:fill-box;transform-origin:78% 88%;
+/* la tetera se inclina apoyándose en su base derecha */
+.tetera{transform-box:fill-box;transform-origin:88% 92%;
   animation:sirve 9s cubic-bezier(.45,0,.35,1) infinite}
 @keyframes sirve{
-  0%,8%{transform:rotate(0deg) translateY(0)}
-  20%,62%{transform:rotate(-38deg) translateY(-4px)}
-  76%,100%{transform:rotate(0deg) translateY(0)}
+  0%,8%{transform:rotate(0deg)}
+  20%,62%{transform:rotate(26deg)}
+  76%,100%{transform:rotate(0deg)}
 }
 
 /* el chorro aparece mientras la tetera está inclinada */
@@ -607,31 +607,35 @@ footer.sitio{padding:42px 0;border-top:1px solid var(--hilo);color:var(--tenue);
         </defs>
 
         <!-- brillo de fondo -->
-        <ellipse class="halo" cx="210" cy="250" rx="150" ry="70" fill="url(#gHalo)"/>
+        <ellipse class="halo" cx="180" cy="200" rx="185" ry="120" fill="url(#gHalo)"/>
 
         <!-- ===== TETERA ===== -->
         <g class="tetera">
-          <!-- asa -->
-          <path d="M126 150c-22 0-30 12-30 26s10 26 30 26"
-                fill="none" stroke="url(#gTetera)" stroke-width="9" stroke-linecap="round"/>
-          <!-- cuerpo -->
-          <path d="M126 132h84c14 0 22 10 22 24v34c0 20-14 34-34 34h-60c-20 0-34-14-34-34v-34c0-14 8-24 22-24z"
-                fill="url(#gTetera)"/>
-          <!-- pico -->
-          <path d="M232 150c16 2 30 10 40 22 4 5 2 10-4 10-10 0-22-6-36-14z"
-                fill="url(#gTetera)"/>
+          <!-- pico largo y curvo, sale por la derecha -->
+          <path d="M144 118c26 0 44 8 58 24 8 9 12 18 13 27"
+                fill="none" stroke="url(#gTetera)" stroke-width="13" stroke-linecap="round"/>
+          <!-- asa redonda, del lado opuesto -->
+          <path d="M56 112c-20 2-30 14-30 28s10 26 30 28"
+                fill="none" stroke="url(#gTetera)" stroke-width="11" stroke-linecap="round"/>
+          <!-- cuerpo panzón -->
+          <ellipse cx="96" cy="140" rx="52" ry="42" fill="url(#gTetera)"/>
+          <!-- cuello -->
+          <path d="M74 104h44v-8H74z" fill="url(#gTetera)"/>
           <!-- tapa -->
-          <path d="M148 132h64c0-12-14-20-32-20s-32 8-32 20z" fill="url(#gTetera)"/>
-          <circle cx="180" cy="104" r="8" fill="#FFF4FA" opacity=".9"/>
-          <!-- brillo del cuerpo -->
-          <path d="M140 148c0-8 6-12 14-12v56c-8 0-14-6-14-14z" fill="#FFF4FA" opacity=".28"/>
+          <ellipse cx="96" cy="96" rx="26" ry="9" fill="url(#gTetera)"/>
+          <path d="M78 96c0-10 8-17 18-17s18 7 18 17z" fill="url(#gTetera)"/>
+          <!-- perilla -->
+          <circle cx="96" cy="74" r="7" fill="#FFF4FA" opacity=".95"/>
+          <!-- brillo -->
+          <ellipse cx="76" cy="128" rx="14" ry="22" fill="#FFF4FA" opacity=".26"/>
         </g>
 
         <!-- ===== CHORRO ===== -->
+        <!-- sale de la punta del pico y cae hasta la boca de la taza -->
         <g class="chorro">
-          <path d="M276 176c2 18 0 34-4 48" stroke="url(#gChorro)" stroke-width="7"
+          <path d="M215 172c6 16 4 26 0 36" stroke="url(#gChorro)" stroke-width="7"
                 stroke-linecap="round" fill="none"/>
-          <circle class="gota" cx="272" cy="196" r="4" fill="#6B3B22"/>
+          <circle class="gota" cx="214" cy="182" r="4" fill="#6B3B22"/>
         </g>
 
         <!-- ===== TAZA ===== -->
